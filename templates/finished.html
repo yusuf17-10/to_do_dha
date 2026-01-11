@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block body%}
+<h2>Finished Tasks 🎉</h2>
+
+<a href="/dashboard">← Back to Dashboard</a>
+<ol>
+{% for task in tasks %}
+  <div class="task completed">
+    <li>
+    <h3 id="taskname">{{ task.title }}</h3>
+    </li>
+    <p>{{ task.description }}</p>
+  </div>
+{% else %}
+  <p>No finished tasks yet.</p>
+{% endfor %}
+</ol>
+
+
+{% endblock %}

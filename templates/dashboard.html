@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block body%}
+<div class=""container>
+    <h1>Welcome, {{ name }} </h1>
+    <p>welcome to your Dashboard</p>
+    <a href="/logout">Logout</a>
+</div>
+<br></br>
+<div>
+    <form action="/create" method='get'>
+        <button type="submit">Create New Task</button>
+    </form>
+</div>
+<br>
+<a href="/finished" method="post">Finished tasks</a>
+<h2>Current tasks</h2>
+
+<ol>
+{% for task in tasks %}
+    <li>
+        <h3 id="taskname">
+            <a href="/task/{{ task.id }}">{{ task.title }}</a>
+        </h3>
+        </li>
+        {% if task.schedule_at %}
+        <p>{{ task.schedule_at.strftime("%d %b %Y, %I:%M %p") }}</p>
+        {% else %}
+        <p>No date set</p>
+        {% endif %}
+    
+{% endfor %}
+</ol>
+
+
+
+{% endblock %}

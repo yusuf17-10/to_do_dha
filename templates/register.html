@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<h2>Register</h2>
+
+{% if error %}
+<p style="color:red">{{ error }}</p>
+{% endif %}
+
+<form method="post" action="/register">
+    <input autocomplete="off" name="username" placeholder="Username" required >
+    <input type="password" name="password" placeholder="Password" required>
+    <input autocomplete="off" name="name" placeholder="name" required >
+    <input autocomplete="off" name="email" placeholder="email" required >
+    <input autocomplete="off" name="phone" placeholder="phone" required >
+    <button>Register</button>
+</form>
+
+<p>
+    Already have an account?
+    <a href="/">Login</a>
+</p>
+
+{% endblock %}
