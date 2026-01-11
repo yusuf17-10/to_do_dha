@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<h1>Welcome</h1>
+
+<form action="/login" method="post">
+    <input autocomplete="off" type="text" name="username" placeholder="Username">
+    <input type="password" name="password" placeholder="Password">
+    <input type="submit" value="Login" id="loginbtt">
+</form>
+
+<p>
+    New user?
+    <a href="/register">Register</a>
+</p>
+
+{% endblock %}
